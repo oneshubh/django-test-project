@@ -1,3 +1,5 @@
 .vscode/*
 db.sqlite3
-dummyproject/__pycache__/*
+*/__pycache__/*
+__pycache__/
+*.py[cod]
