@@ -16,8 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#rest framework API
+from rest_framework import routers
+from quickstart import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'questions', views.QuestionViewSet)
+
+
 urlpatterns = [
-    path('', include('polls.urls')),        
+    path('', include(router.urls)),
+    path('polls/', include('polls.urls')),        
     # path('polls/', include('polls.urls')),    
     path('admin/', admin.site.urls),    
 ]
