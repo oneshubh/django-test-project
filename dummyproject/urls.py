@@ -18,16 +18,18 @@ from django.urls import path, include
 
 #rest framework API
 from rest_framework import routers
-from quickstart import views
+from quickstart import views as quickstartViews
+from snippets import views as snippetsViews
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
-router.register(r'questions', views.QuestionViewSet)
-
+router.register(r'users', quickstartViews.UserViewSet)
+router.register(r'groups', quickstartViews.GroupViewSet)
+router.register(r'questions', quickstartViews.QuestionViewSet)
+router.register(r'snippets', snippetsViews.SnippetViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('snippets/', include('snippets.urls')),
     path('polls/', include('polls.urls')),        
     # path('polls/', include('polls.urls')),    
     path('admin/', admin.site.urls),    

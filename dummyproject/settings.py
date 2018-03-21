@@ -41,6 +41,7 @@ REST_FRAMEWORK = {
 
 INSTALLED_APPS = [
     'rest_framework', # here added rest framework app
+    'snippets.apps.SnippetsConfig',    
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
