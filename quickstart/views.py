@@ -8,12 +8,12 @@ from .serializers import UserSerializer, GroupSerializer, QuestionSerializer
 from polls.models import Question
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+# class UserViewSet(viewsets.ModelViewSet):
+#     """
+#     API endpoint that allows users to be viewed or edited.
+#     """
+#     queryset = User.objects.all().order_by('-date_joined')
+#     serializer_class = UserSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):
